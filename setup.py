@@ -27,9 +27,8 @@ with codecs.open(os.path.join(os.path.abspath(os.path.dirname(
 def read(f):
     return open(os.path.join(os.path.dirname(__file__), f)).read().strip()
 
-install_requires = ['aiohttp>=0.18']
+install_requires = ['aiohttp>=0.18', 'aiohttp-session']
 tests_require = install_requires + ['pytest']
-extras_require = {'session': 'aiohttp-session'}
 
 setup(name='aiohttp-security',
       version=version,
@@ -51,5 +50,4 @@ setup(name='aiohttp-security',
       install_requires=install_requires,
       tests_require=tests_require,
       cmdclass={'test': PyTest},
-      include_package_data=True,
-      extras_require=extras_require)
+      include_package_data=True)
